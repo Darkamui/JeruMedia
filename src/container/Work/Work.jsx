@@ -94,7 +94,7 @@ const Work = () => {
 										transition={{ duration: 0.25 }}
 										className="app__flex"
 									>
-										{activeFilter !== "Mobile" && <AiFillGithub />}
+										{!work.tags.includes("Mobile") && <AiFillGithub />}
 									</motion.div>
 								</a>
 							</motion.div>
