@@ -47,6 +47,9 @@
 	justify-content: center;
 	align-items: center;
 	max-width: 120rem;
+	h4 {
+		text-align: center;
+	}
 	.app__work-item {
 		width: 270px;
 		flex-direction: column;
