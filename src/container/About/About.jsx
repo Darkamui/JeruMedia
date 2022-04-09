@@ -20,8 +20,7 @@ const About = () => {
 		<>
 			<h2 className="head-text">
 				You <span>Dream </span>It.
-				<br />
-				We <span>Build </span> It.
+				<br />I <span>Build </span> It.
 			</h2>
 
 			<div className="app__profiles">
