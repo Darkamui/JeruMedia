@@ -1,6 +1,8 @@
 .app {
 	background-color: var(--primary-color);
 	font-family: var(--font-base);
+	max-width: 120rem;
+	margin: auto;
 }
 
 .app__whitebg {
