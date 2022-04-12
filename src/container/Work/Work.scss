@@ -51,7 +51,9 @@
 		text-align: center;
 	}
 	.app__work-item {
-		width: 270px;
+		max-width: 370px;
+		max-height: 450px;
+		height: 100%;
 		flex-direction: column;
 		margin: 2rem;
 		padding: 1rem;
@@ -65,9 +67,18 @@
 		&:hover {
 			box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 		}
-
+		.app__work-btn {
+			text-decoration: none;
+			font-size: 1.25rem;
+			color: rgb(49, 59, 172);
+			cursor: pointer;
+			&:hover {
+				color: rgb(49, 59, 200);
+			}
+		}
 		@media screen and (min-width: 2000px) {
-			width: 470px;
+			max-width: 470px;
+			max-height: 550px;
 			padding: 1.25rem;
 			border-radius: 0.75rem;
 		}
@@ -92,9 +103,9 @@
 		object-fit: cover;
 	}
 
-	@media screen and (min-width: 2000px) {
-		height: 350px;
-	}
+	// @media screen and (min-width: 2000px) {
+	// 	height: 350px;
+	// }
 }
 
 .app__work-hover {
@@ -137,7 +148,8 @@
 	width: 100%;
 	position: relative;
 	flex-direction: column;
-
+	justify-content: center;
+	flex: 1;
 	h4 {
 		margin-top: 1rem;
 		line-height: 1.5;

@@ -6,7 +6,7 @@ const SocialMedia = () => (
 		<a
 			href="https://www.linkedin.com/in/daniel-j-83913a1ab/"
 			target="_blank"
-			rel="noopener noreferer"
+			rel="noopener noreferrer"
 		>
 			<div>
 				<BsLinkedin />
@@ -15,7 +15,7 @@ const SocialMedia = () => (
 		<a
 			href="https://github.com/Darkamui"
 			target="_blank"
-			rel="noopener noreferer"
+			rel="noopener noreferrer"
 		>
 			<div>
 				<BsGithub />

@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
+import { Link } from "react-router-dom";
 
 const Work = () => {
 	const [works, setWorks] = useState([]);
@@ -111,6 +112,13 @@ const Work = () => {
 								<p className="p-text">{work.tags[0]}</p>
 							</div>
 						</div>
+						<Link
+							to={{ pathname: `/${work.title}`, state: { work: work } }}
+							className="app__work-btn"
+							state={{ work: work }}
+						>
+							More Details
+						</Link>
 					</div>
 				))}
 			</motion.div>
@@ -120,6 +128,6 @@ const Work = () => {
 
 export default AppWrap(
 	MotionWrap(Work, "app__works"),
-	"work",
+	"projects",
 	"app__primarybg"
 );
