@@ -4,7 +4,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	max-width: 70rem;
+	margin: auto;
 	padding: 0.5rem 2rem;
 	background: rgba(255, 255, 255, 0.25);
 	// box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
@@ -23,7 +24,6 @@
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
-	flex: 1;
 	img {
 		width: 100%;
 		max-width: 125px;
@@ -35,7 +35,6 @@
 }
 
 .app__navbar-links {
-	flex: 1;
 	display: flex;
 	justify-content: center;
 	align-items: center;

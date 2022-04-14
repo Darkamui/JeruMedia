@@ -15,20 +15,24 @@ const Project = () => {
 					<motion.div
 						className="watermark"
 						whileInView={{ opacity: [0, 0.5, 1] }}
-						transition={{ duration: 1, delay: 2, ease: "easeInOut" }}
+						transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
 					>
 						<p>{state.work.title}</p>
 					</motion.div>
 					<motion.div
 						className="watermark2"
 						whileInView={{ opacity: [0, 0.5, 1] }}
-						transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
+						transition={{ duration: 0.5, ease: "easeInOut" }}
 					>
 						<p>{state.work.title}</p>
 					</motion.div>
 					<div className="projectContainer">
 						{/* <h3>{state.work.title}</h3> */}
-						<div className="projectImg">
+						<motion.div
+							whileInView={{ opacity: [0, 0.5, 1] }}
+							transition={{ duration: 0.5, delay: 1 }}
+							className="projectImg"
+						>
 							<Carousel showThumbs={false}>
 								<div>
 									<img src={urlFor(state.work.imgUrl)} />
@@ -41,16 +45,16 @@ const Project = () => {
 								</div>
 							</Carousel>
 							{/* <img src={urlFor(state.work.imgUrl)} alt="" /> */}
-						</div>
+						</motion.div>
 						<motion.div
-							whileInView={{ opacity: [0, 0, 1] }}
-							transition={{ duration: 0.5 }}
+							whileInView={{ opacity: [0, 0.5, 1] }}
+							transition={{ duration: 0.5, delay: 1 }}
 							className="projectContent"
 						>
 							<motion.div
 								className="left"
-								whileInView={{ x: [-200, -100, 0], opacity: [0, 0, 1] }}
-								transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+								whileInView={{ x: [-200, -100, 0], opacity: [0, 0.5, 1] }}
+								transition={{ duration: 0.5, delay: 1.5, ease: "easeInOut" }}
 							>
 								<div className="titleBrush">
 									<h4>Project Overview</h4>
@@ -62,8 +66,8 @@ const Project = () => {
 							</motion.div>
 							<motion.div
 								className="right"
-								whileInView={{ x: [200, 100, 0], opacity: [0, 0, 1] }}
-								transition={{ duration: 0.5, delay: 0.5, ease: "easeInOut" }}
+								whileInView={{ x: [200, 100, 0], opacity: [0, 0.5, 1] }}
+								transition={{ duration: 0.5, delay: 2, ease: "easeInOut" }}
 							>
 								<div className="titleBrush">
 									<h4>Technologies used</h4>

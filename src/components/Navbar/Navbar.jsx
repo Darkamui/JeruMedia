@@ -10,7 +10,14 @@ const Navbar = () => {
 
 	return (
 		<nav className="app__navbar">
-			<div style={{ display: "flex", gap: "0.5rem" }}>
+			<div
+				style={{
+					display: "flex",
+					gap: "0.5rem",
+					width: "100%",
+					justifyContent: "space-between",
+				}}
+			>
 				<div className="app__navbar-logo">
 					<img src={images.logo2} alt="logo" />
 				</div>
