@@ -2,6 +2,7 @@
 	flex: 1;
 	width: 100%;
 	flex-direction: column;
+	z-index: 99999;
 }
 
 .app__work-filter {
@@ -167,4 +168,11 @@
 		background-color: #fff;
 		top: -25px;
 	}
+}
+.detailAction {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.25rem;
+	color: "#7980c9";
 }

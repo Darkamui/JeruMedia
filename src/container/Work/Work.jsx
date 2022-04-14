@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub } from "react-icons/ai";
+import { AiFillEye, AiFillGithub, AiOutlineDoubleRight } from "react-icons/ai";
 import { motion } from "framer-motion";
-
+import { BsArrowRight } from "react-icons/bs";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
@@ -112,13 +112,24 @@ const Work = () => {
 								<p className="p-text">{work.tags[0]}</p>
 							</div>
 						</div>
-						<Link
-							to={{ pathname: `/${work.title}`, state: { work: work } }}
-							className="app__work-btn"
-							state={{ work: work }}
-						>
-							More Details
-						</Link>
+						<div className="detailAction">
+							<Link
+								to={{ pathname: `/${work.title}`, state: { work: work } }}
+								className="app__work-btn"
+								state={{ work: work }}
+							>
+								More Details
+							</Link>
+							<Link
+								to={{ pathname: `/${work.title}`, state: { work: work } }}
+								state={{ work: work }}
+							>
+								<AiOutlineDoubleRight
+									size={"1.5rem"}
+									style={{ color: "#7980c9", marginTop: ".5rem" }}
+								/>
+							</Link>
+						</div>
 					</div>
 				))}
 			</motion.div>
@@ -128,6 +139,6 @@ const Work = () => {
 
 export default AppWrap(
 	MotionWrap(Work, "app__works"),
-	"projects",
+	"work",
 	"app__primarybg"
 );

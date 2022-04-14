@@ -37,9 +37,15 @@ import bolt from "../assets/bolt.png";
 import nb from "../assets/nb.png";
 import skype from "../assets/skype.png";
 import spotify from "../assets/spotify.png";
+
+import brush from "../assets/banner-2.png";
+import logo2 from "../assets/logo.gif";
+
 // eslint-disable-next-line
 export default {
 	email,
+	brush,
+	logo2,
 	mobile,
 	api,
 	cpp,
