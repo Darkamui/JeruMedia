@@ -19,7 +19,7 @@ body {
 
 .app__container {
 	width: 100%;
-	min-height: 100vh;
+	min-height: 90vh;
 
 	display: flex;
 	flex-direction: row;
@@ -36,7 +36,6 @@ body {
 	width: 100%;
 	flex-direction: column;
 	padding: 4rem 2rem;
-
 	@media screen and (max-width: 450px) {
 		padding: 4rem 1rem 2rem;
 	}
@@ -68,9 +67,9 @@ body {
 		color: var(--secondary-color);
 	}
 
-	@media screen and (min-width: 2000px) {
-		font-size: 4rem;
-	}
+	// @media screen and (min-width: 2000px) {
+	// 	font-size: 4rem;
+	// }
 
 	@media screen and (max-width: 450px) {
 		font-size: 2rem;
@@ -83,9 +82,9 @@ body {
 	color: var(--gray-color);
 	line-height: 1.5;
 
-	@media screen and (min-width: 2000px) {
-		font-size: 1.75rem;
-	}
+	// @media screen and (min-width: 2000px) {
+	// 	font-size: 1.75rem;
+	// }
 }
 
 .bold-text {
@@ -94,9 +93,9 @@ body {
 	color: var(--black-color);
 	text-align: left;
 
-	@media screen and (min-width: 2000px) {
-		font-size: 2rem;
-	}
+	// @media screen and (min-width: 2000px) {
+	// 	font-size: 2rem;
+	// }
 
 	@media screen and (max-width: 450px) {
 		font-size: 0.9rem;
@@ -140,17 +139,17 @@ body {
 			}
 		}
 
-		@media screen and (min-width: 2000px) {
-			width: 70px;
-			height: 70px;
+		// @media screen and (min-width: 2000px) {
+		// 	width: 70px;
+		// 	height: 70px;
 
-			margin: 0.5rem 0;
+		// 	margin: 0.5rem 0;
 
-			svg {
-				width: 30px;
-				height: 30px;
-			}
-		}
+		// 	svg {
+		// 		width: 30px;
+		// 		height: 30px;
+		// 	}
+		// }
 	}
 }
 
@@ -175,10 +174,10 @@ body {
 			background-color: var(--secondary-color);
 		}
 
-		@media screen and (min-width: 2000px) {
-			width: 20px;
-			height: 20px;
-		}
+		// @media screen and (min-width: 2000px) {
+		// 	width: 20px;
+		// 	height: 20px;
+		// }
 	}
 }
 

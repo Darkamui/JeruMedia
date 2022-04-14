@@ -17,6 +17,7 @@
 
 .app__header {
 	flex: 1;
+	max-width: 100rem;
 	width: 100%;
 	height: 100%;
 	flex-direction: row;
@@ -87,9 +88,9 @@
 	span {
 		font-size: 2.5rem;
 
-		// @media screen and (min-width: 2000px) {
-		// 	font-size: 5rem;
-		// }
+		@media screen and (min-width: 2000px) {
+			font-size: 5rem;
+		}
 	}
 
 	@media screen and (max-width: 1200px) {
@@ -170,7 +171,6 @@
 
 .app__header-img {
 	flex: 1;
-	height: 100%;
 
 	display: flex;
 	justify-content: flex-end;

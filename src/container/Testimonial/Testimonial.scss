@@ -23,15 +23,6 @@
 		object-fit: cover;
 	}
 
-	@media screen and (min-width: 2000px) {
-		min-height: 450px;
-
-		img {
-			width: 150px;
-			height: 150px;
-		}
-	}
-
 	@media screen and (max-width: 850px) {
 		width: 100%;
 	}
@@ -57,11 +48,6 @@
 		line-height: 2rem;
 		color: var(--black-color);
 		font-family: var(--font-base);
-
-		@media screen and (min-width: 2000px) {
-			font-size: 2rem;
-			line-height: 3.5rem;
-		}
 	}
 
 	h4 {
@@ -108,53 +94,5 @@
 				color: var(--white-color);
 			}
 		}
-
-		@media screen and (min-width: 2000px) {
-			width: 100px;
-			height: 100px;
-
-			svg {
-				width: 45px;
-				height: 45px;
-			}
-		}
-	}
-}
-
-.app__testimonial-brands {
-	width: 80%;
-	flex-wrap: wrap;
-	margin-top: 2rem;
-
-	div {
-		width: 150px;
-		margin: 1.5rem;
-
-		img {
-			width: 100%;
-			height: auto;
-			object-fit: cover;
-			filter: grayscale(1);
-		}
-
-		&:hover {
-			img {
-				filter: grayscale(0);
-			}
-		}
-
-		@media screen and (min-width: 2000px) {
-			width: 210px;
-			margin: 2rem;
-		}
-
-		@media screen and (max-width: 450px) {
-			width: 120px;
-			margin: 1rem;
-		}
-	}
-
-	@media screen and (max-width: 800px) {
-		width: 100%;
 	}
 }

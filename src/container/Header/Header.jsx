@@ -19,22 +19,22 @@ const scaleVariants = {
 const Header = () => (
 	<div className="app__header app__flex">
 		<motion.div
-			whileInView={{ x: [-100, 0], opacity: [0, 1] }}
-			transition={{ duration: 0.5 }}
+			whileInView={{ x: [-300, 0], opacity: [0, 1] }}
+			transition={{ duration: 1 }}
 			className="app__header-info"
 		>
 			<div className="app__header-badge">
 				<div className="badge-cmp app__flex">
 					<span>👋</span>
 					<div style={{ marginLeft: 20 }}>
-						<p className="p-text">Hello, I am</p>
-						<h1 className="head-text">Daniel</h1>
+						<p className="p-text">Hello, we are</p>
+						<h1 className="head-text">JeruMedia</h1>
 					</div>
 				</div>
 
 				<div className="tag-cmp app__flex">
-					<p className="p-text">Web Developer</p>
-					<p className="p-text">Mobile Developer</p>
+					<p className="p-text">Web Developers</p>
+					<p className="p-text">Mobile Developers</p>
 				</div>
 				<div className="tag-cmp app__flex hiddenMobile">
 					<p className="p-text">Search Engine Optimisation</p>
@@ -44,8 +44,8 @@ const Header = () => (
 		</motion.div>
 
 		<motion.div
-			whileInView={{ opacity: [0, 1] }}
-			transition={{ duration: 0.5, delayChildren: 0.5 }}
+			whileInView={{ scale: [0, 1], opacity: [0, 1] }}
+			transition={{ duration: 1 }}
 			className="app__header-img"
 		>
 			<img
