@@ -1,20 +1,24 @@
 .app__navbar {
 	width: 100%;
-	position: relative;
+	position: fixed;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 70rem;
 	margin: auto;
-	padding: 0.5rem 2rem;
-	z-index: 2;
+	padding: 0.5rem 12rem;
+	z-index: 99999;
+	-webkit-backdrop-filter: brightness(70%) blur(5px);
+
+	backdrop-filter: brightness(70%) blur(5px);
 }
-.bgNav {
-	background-color: rgb(251, 251, 255);
-}
+// .bgNav {
+// 	display: flex;
+// 	justify-content: center;
+// }
 @media screen and (max-width: 1024px) {
 	.app__navbar {
 		justify-content: space-between;
+		padding: 0.5rem 2rem;
 	}
 }
 .app__navbar-logo {
@@ -54,17 +58,17 @@
 		}
 
 		a {
-			color: var(--gray-color);
+			color: #000;
 			text-decoration: none;
 			flex-direction: column;
 
 			text-transform: uppercase;
-			font-weight: 500;
-
+			font-weight: 600;
+			font-size: 1.25rem;
 			transition: all 0.3s ease-in-out;
 
 			&:hover {
-				color: var(--secondary-color);
+				color: var(--white-color);
 			}
 		}
 
