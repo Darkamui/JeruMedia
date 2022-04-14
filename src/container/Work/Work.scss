@@ -2,9 +2,168 @@
 	flex: 1;
 	width: 100%;
 	flex-direction: column;
-	z-index: 99999;
+	// z-index: 99999;
 }
-
+.appWorkContainer {
+	display: flex;
+	gap: 2rem;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 70rem;
+	width: 100%;
+	max-height: 250px;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+	background-color: #fff;
+	.bgWorkOverlay {
+		position: absolute;
+		max-height: 250px;
+		height: 100%;
+		width: 80%;
+		right: 0;
+		background-color: rgba(224, 231, 255, 0.7);
+		opacity: 0.5;
+		z-index: 1;
+	}
+	@media screen and (max-width: 1300px) {
+		flex-direction: column;
+		max-height: none;
+		.hrWork,
+		.bgWorkOverlay {
+			display: none;
+		}
+		height: auto;
+		padding: 0 1rem;
+	}
+	.h4Work {
+		font-size: 1.25rem;
+		margin-bottom: 1rem;
+	}
+	.pWork {
+		text-align: justify;
+		font-size: 1.1rem;
+		padding-right: 5rem;
+		line-height: 1.7;
+	}
+	.hrWork {
+		display: block;
+		max-height: 250px;
+		height: 100%;
+		border: 0;
+		border-right: 5px solid var(--secondary-color);
+		margin: 1em 0;
+		padding: 0;
+	}
+	@media screen and (max-width: 1300px) {
+		flex-direction: column;
+		max-height: none;
+		.hrWork,
+		.bgWorkOverlay {
+			display: none;
+		}
+	}
+	img {
+		max-width: 30rem;
+		max-height: 250px;
+		opacity: 1;
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+		z-index: 2;
+		@media screen and (max-width: 1300px) {
+			max-width: 25rem;
+			padding-bottom: 1rem;
+		}
+	}
+	.middleWork {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding: 2rem 0;
+		align-items: flex-start;
+		height: 100%;
+		z-index: 2;
+		.workActionBtns {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+			margin-top: 3rem;
+			i {
+				margin-left: 0.25rem;
+			}
+		}
+		.leftActionBtns,
+		.rightActionBtns {
+			display: flex;
+			gap: 0.5rem;
+			justify-content: center;
+			align-items: center;
+			@media screen and (max-width: 500px) {
+				flex-direction: column;
+			}
+		}
+		a {
+			text-decoration: none;
+			padding: 1rem 1rem;
+			border-radius: 10px;
+			text-transform: uppercase;
+			font-weight: 600;
+			background-color: var(--primary-color);
+		}
+		span {
+			padding: 0.5rem;
+			background-color: var(--lightGray-color);
+			font-weight: 600;
+			font-size: 0.85rem;
+			border-radius: 5px;
+		}
+		.actionBtnProject {
+			background-color: var(--secondary-color);
+			color: white;
+		}
+		@media screen and (max-width: 1300px) {
+			.h4Work {
+				font-size: 1rem;
+				margin-bottom: 1rem;
+			}
+			.pWork {
+				font-size: 0.8rem;
+			}
+			a {
+				padding: 0.5rem 0.5rem;
+			}
+			span {
+				padding: 0.25rem;
+				font-size: 0.55rem;
+			}
+			.middleWork {
+				flex: none;
+			}
+		}
+		@media screen and (max-width: 500px) {
+			.h4Work {
+				font-size: 1rem;
+				margin-bottom: 1rem;
+			}
+			.pWork {
+				font-size: 0.8rem;
+			}
+			a {
+				font-size: 0.85rem;
+			}
+			span {
+				padding: 0.25rem;
+				font-size: 0.55rem;
+			}
+			.middleWork {
+				flex: none;
+			}
+		}
+	}
+}
 .app__work-filter {
 	display: flex;
 	flex-direction: row;
@@ -42,6 +201,7 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+	gap: 2rem;
 	max-width: 80rem;
 	height: 100%;
 	h4 {
