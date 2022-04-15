@@ -16,7 +16,9 @@ body {
 .app__primarybg {
 	background-color: var(--primary-color);
 }
-
+.cursorPtr {
+	cursor: pointer;
+}
 .app__container {
 	width: 100%;
 	min-height: 90vh;
@@ -139,18 +141,6 @@ body {
 				color: var(--white-color);
 			}
 		}
-
-		// @media screen and (min-width: 2000px) {
-		// 	width: 70px;
-		// 	height: 70px;
-
-		// 	margin: 0.5rem 0;
-
-		// 	svg {
-		// 		width: 30px;
-		// 		height: 30px;
-		// 	}
-		// }
 	}
 }
 
@@ -174,11 +164,6 @@ body {
 		&:hover {
 			background-color: var(--secondary-color);
 		}
-
-		// @media screen and (min-width: 2000px) {
-		// 	width: 20px;
-		// 	height: 20px;
-		// }
 	}
 }
 

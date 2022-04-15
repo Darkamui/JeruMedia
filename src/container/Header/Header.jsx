@@ -27,7 +27,7 @@ const Header = () => (
 				<div className="badge-cmp app__flex">
 					<motion.span
 						whileInView={{ rotate: [0, 35, 0], scale: [1, 1.25, 1] }}
-						transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+						transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
 					>
 						👋
 					</motion.span>

@@ -111,7 +111,7 @@ const Work = () => {
 
 					<div className="app__testimonial-btns app__flex">
 						<div
-							className="app__flex"
+							className="app__flex cursorPtr"
 							onClick={() =>
 								handleClick(
 									currentIndex === 0 ? filterWork.length - 1 : currentIndex - 1
@@ -122,7 +122,7 @@ const Work = () => {
 						</div>
 
 						<div
-							className="app__flex"
+							className="app__flex cursorPtr"
 							onClick={() =>
 								handleClick(
 									currentIndex === filterWork.length - 1 ? 0 : currentIndex + 1
