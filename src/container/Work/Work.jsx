@@ -103,6 +103,12 @@ const Work = () => {
 						</div>
 						<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
 					</div>
+					{
+						<div>
+							{currentIndex + 1} of {filterWork.length}
+						</div>
+					}
+
 					<div className="app__testimonial-btns app__flex">
 						<div
 							className="app__flex"
