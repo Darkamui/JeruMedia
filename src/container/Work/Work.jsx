@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
+import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+
 import { urlFor, client } from "../../client";
 import "./Work.scss";
 
@@ -9,7 +11,11 @@ const Work = () => {
 	const [filterWork, setFilterWork] = useState([]);
 	const [activeFilter, setActiveFilter] = useState("All");
 	const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
+	const [currentIndex, setCurrentIndex] = useState(0);
 
+	const handleClick = (index) => {
+		setCurrentIndex(index);
+	};
 	useEffect(() => {
 		const query = '*[_type == "works"]';
 
@@ -21,6 +27,7 @@ const Work = () => {
 
 	const handleWorkFilter = (item) => {
 		setActiveFilter(item);
+		setCurrentIndex(0);
 		setAnimateCard([{ y: 100, opacity: 0 }]);
 
 		setTimeout(() => {
@@ -39,7 +46,6 @@ const Work = () => {
 			<h2 className="head-text">
 				Our <span>Portfolio</span>
 			</h2>
-
 			<div className="app__work-filter">
 				{["FullStack", "Frontend", "Mobile", "All"].map((item, index) => (
 					<div
@@ -53,24 +59,23 @@ const Work = () => {
 					</div>
 				))}
 			</div>
-
-			<motion.div
-				animate={animateCard}
-				transition={{ duration: 0.5, delayChildren: 0.5 }}
-				className="app__work-portfolio"
-			>
-				{filterWork.map((work, index) => (
-					<div key={index} className="appWorkContainer">
+			{filterWork.length && (
+				<motion.div
+					animate={animateCard}
+					transition={{ duration: 0.5, delayChildren: 0.5 }}
+					className="app__work-portfolio"
+				>
+					<div className="appWorkContainer">
 						<div className="bgWorkOverlay"></div>
 						<div className="hrWork"></div>
 						<div className="middleWork">
-							<h4 className="h4Work">{work.title}</h4>
-							<p className="pWork">{work.description}</p>
+							<h4 className="h4Work">{filterWork[currentIndex].title}</h4>
+							<p className="pWork">{filterWork[currentIndex].description}</p>
 							<div className="workActionBtns">
 								<div className="leftActionBtns">
-									{work.projectLink && (
+									{filterWork[currentIndex].projectLink && (
 										<a
-											href={work.projectLink}
+											href={filterWork[currentIndex].projectLink}
 											target="_blank"
 											rel="noreferrer"
 											className="actionBtnProject"
@@ -79,23 +84,50 @@ const Work = () => {
 											<i className="fa-solid fa-arrow-up-right-from-square"></i>
 										</a>
 									)}
-									{work.codeLink && (
-										<a href={work.codeLink} target="_blank" rel="noreferrer">
+									{filterWork[currentIndex].codeLink && (
+										<a
+											href={filterWork[currentIndex].codeLink}
+											target="_blank"
+											rel="noreferrer"
+										>
 											github <i className="fa-brands fa-github"></i>
 										</a>
 									)}
 								</div>
 								<div className="rightActionBtns">
-									{work.tags.map((tag, index) => (
+									{filterWork[currentIndex].tags.map((tag, index) => (
 										<span key={index}>{tag}</span>
 									))}
 								</div>
 							</div>
 						</div>
-						<img src={urlFor(work.imgUrl)} alt="" />
+						<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
 					</div>
-				))}
-			</motion.div>
+					<div className="app__testimonial-btns app__flex">
+						<div
+							className="app__flex"
+							onClick={() =>
+								handleClick(
+									currentIndex === 0 ? filterWork.length - 1 : currentIndex - 1
+								)
+							}
+						>
+							<HiChevronLeft />
+						</div>
+
+						<div
+							className="app__flex"
+							onClick={() =>
+								handleClick(
+									currentIndex === filterWork.length - 1 ? 0 : currentIndex + 1
+								)
+							}
+						>
+							<HiChevronRight />
+						</div>
+					</div>
+				</motion.div>
+			)}
 		</>
 	);
 };
