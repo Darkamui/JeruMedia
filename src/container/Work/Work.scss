@@ -83,7 +83,6 @@
 		justify-content: flex-start;
 		padding: 2rem 0;
 		align-items: flex-start;
-		height: 100%;
 		z-index: 2;
 		.workActionBtns {
 			display: flex;
@@ -112,6 +111,7 @@
 			text-transform: uppercase;
 			font-weight: 600;
 			background-color: var(--primary-color);
+			color: var(--secondary-color);
 		}
 		span {
 			padding: 0.5rem;
