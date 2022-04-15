@@ -25,7 +25,12 @@ const Header = () => (
 		>
 			<div className="app__header-badge">
 				<div className="badge-cmp app__flex">
-					<span>👋</span>
+					<motion.span
+						whileInView={{ rotate: [0, 35, 0], scale: [1, 1.25, 1] }}
+						transition={{ duration: 2.5, repeat: Infinity, ease: "linear" }}
+					>
+						👋
+					</motion.span>
 					<div style={{ marginLeft: 20 }}>
 						<p className="p-text">Hello, we are</p>
 						<h1 className="head-text">JeruMedia</h1>
@@ -68,9 +73,39 @@ const Header = () => (
 			className="app__header-circles"
 		>
 			{[images.laravel, images.react, images.css].map((circle, index) => (
-				<div className="circle-cmp app__flex" key={`circle-${index}`}>
-					<img src={circle} alt="profile_bg" />
-				</div>
+				<motion.div
+					whileInView={
+						index === 1
+							? {
+									x: [0, -45, 0, 45, 0],
+									y: [0, 25, 45, 25, 0],
+									rotate: [0, 360],
+									scale: [1, 1.25, 1, 0.75, 1],
+							  }
+							: index === 0
+							? {
+									x: [0, -45, 0, 45, 0],
+									y: [0, 25, 45, 25, 0],
+									rotate: [0, 360],
+									scale: [1, 1.25, 1, 0.75, 1],
+							  }
+							: {
+									x: [0, -45, 0, 45, 0],
+									y: [0, 25, 45, 25, 0],
+									rotate: [0, 180, 360],
+									scale: [1, 1.15, 1, 0.75, 1],
+							  }
+					}
+					transition={{
+						duration: 5,
+						ease: "linear",
+						repeat: Infinity,
+					}}
+					className="circle-cmp app__flex"
+					key={`circle-${index}`}
+				>
+					<motion.img src={circle} alt="profile_bg" />
+				</motion.div>
 			))}
 		</motion.div>
 	</div>

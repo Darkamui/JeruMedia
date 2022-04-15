@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { AiFillEye, AiFillGithub, AiOutlineDoubleRight } from "react-icons/ai";
-import { BiLinkExternal } from "react-icons/bi";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
-import { Link } from "react-router-dom";
 
 const Work = () => {
 	const [works, setWorks] = useState([]);
@@ -63,7 +60,7 @@ const Work = () => {
 				className="app__work-portfolio"
 			>
 				{filterWork.map((work, index) => (
-					<div className="appWorkContainer">
+					<div key={index} className="appWorkContainer">
 						<div className="bgWorkOverlay"></div>
 						<div className="hrWork"></div>
 						<div className="middleWork">
@@ -71,17 +68,26 @@ const Work = () => {
 							<p className="pWork">{work.description}</p>
 							<div className="workActionBtns">
 								<div className="leftActionBtns">
-									<a href="" className="actionBtnProject">
-										view project
-										<i class="fa-solid fa-arrow-up-right-from-square"></i>
-									</a>
-									<a href="">
-										github <i class="fa-brands fa-github"></i>
-									</a>
+									{work.projectLink && (
+										<a
+											href={work.projectLink}
+											target="_blank"
+											rel="noreferrer"
+											className="actionBtnProject"
+										>
+											view project
+											<i className="fa-solid fa-arrow-up-right-from-square"></i>
+										</a>
+									)}
+									{work.codeLink && (
+										<a href={work.codeLink} target="_blank" rel="noreferrer">
+											github <i className="fa-brands fa-github"></i>
+										</a>
+									)}
 								</div>
 								<div className="rightActionBtns">
-									{work.tags.map((tag) => (
-										<span>{tag}</span>
+									{work.tags.map((tag, index) => (
+										<span key={index}>{tag}</span>
 									))}
 								</div>
 							</div>
