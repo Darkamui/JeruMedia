@@ -4,13 +4,10 @@ import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { urlFor, client } from "../../client";
-import { Trans } from "react-i18next";
-import { useTranslation } from "react-i18next";
 import i18n from "../../assets/i18n/i18n";
 
 const About = () => {
 	const [abouts, setAbouts] = useState([]);
-	const { t } = useTranslation();
 	useEffect(() => {
 		const query = '*[_type == "abouts"]';
 

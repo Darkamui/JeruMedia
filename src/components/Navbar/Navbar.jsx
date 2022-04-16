@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import i18n from "../../assets/i18n/i18n";
 import { images } from "../../constants";
 import "./Navbar.scss";
-import { useTranslation } from "react-i18next";
 import ReactCountryFlag from "react-country-flag";
 const Navbar = () => {
 	const [toggle, setToggle] = useState(false);
-	const { t } = useTranslation();
 
 	React.useEffect(() => {
 		changeLanguage(true);
