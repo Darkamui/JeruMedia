@@ -104,34 +104,39 @@ const Work = () => {
 						<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
 					</motion.div>
 					{
-						<div>
-							{currentIndex + 1} of {filterWork.length}
-						</div>
+						<>
+							<div>
+								{currentIndex + 1} of {filterWork.length}
+							</div>
+							<div className="app__projects-btns app__flex">
+								<div
+									className="app__flex cursorPtr"
+									onClick={() =>
+										handleClick(
+											currentIndex === 0
+												? filterWork.length - 1
+												: currentIndex - 1
+										)
+									}
+								>
+									<HiChevronLeft />
+								</div>
+
+								<div
+									className="app__flex cursorPtr"
+									onClick={() =>
+										handleClick(
+											currentIndex === filterWork.length - 1
+												? 0
+												: currentIndex + 1
+										)
+									}
+								>
+									<HiChevronRight />
+								</div>
+							</div>
+						</>
 					}
-
-					<div className="app__projects-btns app__flex">
-						<div
-							className="app__flex cursorPtr"
-							onClick={() =>
-								handleClick(
-									currentIndex === 0 ? filterWork.length - 1 : currentIndex - 1
-								)
-							}
-						>
-							<HiChevronLeft />
-						</div>
-
-						<div
-							className="app__flex cursorPtr"
-							onClick={() =>
-								handleClick(
-									currentIndex === filterWork.length - 1 ? 0 : currentIndex + 1
-								)
-							}
-						>
-							<HiChevronRight />
-						</div>
-					</div>
 				</motion.div>
 			)}
 		</>
