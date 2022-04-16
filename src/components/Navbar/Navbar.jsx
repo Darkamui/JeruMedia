@@ -1,13 +1,34 @@
 import React, { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
-
+import i18n from "../../assets/i18n/i18n";
 import { images } from "../../constants";
 import "./Navbar.scss";
-
+import { useTranslation } from "react-i18next";
+import ReactCountryFlag from "react-country-flag";
 const Navbar = () => {
 	const [toggle, setToggle] = useState(false);
+	const { t } = useTranslation();
 
+	React.useEffect(() => {
+		changeLanguage(true);
+	}, []);
+
+	const [englishActive, setEnglishActive] = useState(false);
+
+	const changeLanguage = (value) => {
+		if (value) {
+			i18n
+				.changeLanguage("fr")
+				.then(() => setEnglishActive(!value))
+				.catch((err) => console.log(err));
+		} else {
+			i18n
+				.changeLanguage("en")
+				.then(() => setEnglishActive(!value))
+				.catch((err) => console.log(err));
+		}
+	};
 	return (
 		<nav className="app__navbar">
 			<div
@@ -18,16 +39,66 @@ const Navbar = () => {
 					justifyContent: "space-between",
 				}}
 			>
-				<div className="app__navbar-logo">
+				<div
+					className="app__navbar-logo"
+					onClick={() => changeLanguage(englishActive)}
+				>
 					<img src={images.logo2} alt="logo" />
+					{englishActive ? (
+						<div onClick={() => changeLanguage(englishActive)}>
+							<ReactCountryFlag
+								countryCode="FR"
+								svg
+								style={{
+									fontSize: "2rem",
+									marginTop: ".5rem",
+									cursor: "pointer",
+								}}
+							/>
+						</div>
+					) : (
+						<div onClick={() => changeLanguage(englishActive)}>
+							<ReactCountryFlag
+								countryCode="GB"
+								svg
+								style={{
+									fontSize: "2rem",
+									marginTop: ".5rem",
+									cursor: "pointer",
+								}}
+								onClick={() => changeLanguage(englishActive)}
+							/>
+						</div>
+					)}
 				</div>
 				<ul className="app__navbar-links">
-					{["home", "services", "projects", "skills", "contact"].map((item) => (
-						<li className="app__flex p-text" key={`link-${item}`}>
-							<div />
-							<a href={`/#${item}`}>{item}</a>
-						</li>
-					))}
+					{englishActive
+						? ["home", "services", "projects", "skills", "contact"].map(
+								(item) => (
+									<li className="app__flex p-text" key={`link-${item}`}>
+										<div />
+										<a href={`/#${item}`}>{item}</a>
+									</li>
+								)
+						  )
+						: ["home", "services", "projets", "compétences", "contact"].map(
+								(item) => (
+									<li className="app__flex p-text" key={`link-${item}`}>
+										<div />
+										<a
+											href={
+												item === "projets"
+													? `/#projects`
+													: item === "compétences"
+													? `/#skills`
+													: `/#${item}`
+											}
+										>
+											{item}
+										</a>
+									</li>
+								)
+						  )}
 				</ul>
 			</div>
 
