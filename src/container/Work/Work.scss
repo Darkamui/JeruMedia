@@ -11,22 +11,13 @@
 	justify-content: space-between;
 	max-width: 70rem;
 	width: 100%;
-	max-height: 300px;
+	max-height: 350px;
 	height: 100%;
 	position: relative;
 	overflow: hidden;
 	background-color: #fff;
 	border-radius: 0px 15px 15px 0;
-	.bgWorkOverlay {
-		position: absolute;
-		max-height: 300px;
-		height: 100%;
-		width: 60%;
-		right: 0;
-		background-color: rgba(13, 61, 218, 0.2);
-		opacity: 0.5;
-		z-index: 1;
-	}
+
 	@media screen and (max-width: 1300px) {
 		flex-direction: column;
 		max-height: none;
@@ -43,13 +34,13 @@
 	}
 	.pWork {
 		text-align: justify;
-		font-size: 1.3rem;
+		font-size: 1.1rem;
 		padding-right: 5rem;
 		line-height: 1.7;
 	}
 	.hrWork {
 		display: block;
-		max-height: 300px;
+		max-height: 350px;
 		height: 100%;
 		border: 0;
 		border-right: 5px solid var(--secondary-color);
@@ -66,7 +57,7 @@
 	}
 	img {
 		max-width: 32rem;
-		max-height: 300px;
+		max-height: 350px;
 		opacity: 1;
 		object-fit: cover;
 		width: 100%;
@@ -209,8 +200,8 @@
 		text-align: center;
 	}
 	.app__work-item {
-		max-width: 350px;
-		max-height: 450px;
+		// max-width: 350px;
+		// max-height: 450px;
 		height: 100%;
 		flex-direction: column;
 		margin: 2rem;

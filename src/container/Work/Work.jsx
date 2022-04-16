@@ -66,7 +66,6 @@ const Work = () => {
 					className="app__work-portfolio"
 				>
 					<motion.div className="appWorkContainer">
-						<div className="bgWorkOverlay"></div>
 						<div className="hrWork"></div>
 						<div className="middleWork">
 							<h4 className="h4Work">{filterWork[currentIndex].title}</h4>
