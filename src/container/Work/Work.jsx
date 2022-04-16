@@ -65,7 +65,7 @@ const Work = () => {
 					transition={{ duration: 0.5, delayChildren: 0.5 }}
 					className="app__work-portfolio"
 				>
-					<div className="appWorkContainer">
+					<motion.div className="appWorkContainer">
 						<div className="bgWorkOverlay"></div>
 						<div className="hrWork"></div>
 						<div className="middleWork">
@@ -102,14 +102,14 @@ const Work = () => {
 							</div>
 						</div>
 						<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
-					</div>
+					</motion.div>
 					{
 						<div>
 							{currentIndex + 1} of {filterWork.length}
 						</div>
 					}
 
-					<div className="app__testimonial-btns app__flex">
+					<div className="app__projects-btns app__flex">
 						<div
 							className="app__flex cursorPtr"
 							onClick={() =>
@@ -140,6 +140,6 @@ const Work = () => {
 
 export default AppWrap(
 	MotionWrap(Work, "app__works"),
-	"work",
+	"projects",
 	"app__primarybg"
 );

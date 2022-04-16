@@ -21,12 +21,13 @@ import logoTest from "../assets/logoTest.png";
 
 import brush from "../assets/banner-2.png";
 import logo2 from "../assets/logo.gif";
+import contact from "../assets/contact.svg";
 
 // eslint-disable-next-line
 export default {
 	brush,
 	logo2,
-
+	contact,
 	cpp,
 	css,
 	figma,

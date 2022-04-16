@@ -11,10 +11,7 @@
 
 	backdrop-filter: brightness(70%) blur(5px);
 }
-// .bgNav {
-// 	display: flex;
-// 	justify-content: center;
-// }
+
 @media screen and (max-width: 1024px) {
 	.app__navbar {
 		justify-content: space-between;
@@ -68,7 +65,7 @@
 			transition: all 0.3s ease-in-out;
 
 			&:hover {
-				color: var(--white-color);
+				color: var(--secondary-color);
 			}
 		}
 
