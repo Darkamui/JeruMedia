@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ReactTooltip from "react-tooltip";
-
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { urlFor, client } from "../../client";
 import "./Skills.scss";
+import { useTranslation } from "react-i18next";
 
 const Skills = () => {
 	const [experiences, setExperiences] = useState([]);
 	const [skills, setSkills] = useState([]);
-
+	const { t } = useTranslation();
 	useEffect(() => {
 		const query = '*[_type == "experiences"]';
 		const skillsQuery = '*[_type == "skills"]';
@@ -26,7 +26,8 @@ const Skills = () => {
 	return (
 		<>
 			<h2 className="head-text">
-				Skills & <span>Experiences</span>
+				{t("skills")}
+				<span> {t("exp")}</span>
 			</h2>
 
 			<div className="app__skills-container">

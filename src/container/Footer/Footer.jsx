@@ -5,6 +5,7 @@ import { client } from "../../client";
 import "./Footer.scss";
 import { images } from "../../constants";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
 	const [formData, setFormData] = useState({
 		name: "",
@@ -13,7 +14,7 @@ const Footer = () => {
 	});
 	const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 	const [loading, setLoading] = useState(false);
-
+	const { t } = useTranslation();
 	const { username, email, message } = formData;
 
 	const handleChangeInput = (e) => {
@@ -43,7 +44,7 @@ const Footer = () => {
 	return (
 		<>
 			<h2 className="head-text" style={{ marginBottom: "3rem" }}>
-				<span>Chat</span> with us
+				<span>{t("chatSpan")}</span> {t("chatText")}
 			</h2>
 
 			<div className="app__secondary-flex">
@@ -60,7 +61,7 @@ const Footer = () => {
 							<input
 								className="p-text"
 								type="text"
-								placeholder="Your Name"
+								placeholder={t("name")}
 								name="username"
 								value={username}
 								onChange={handleChangeInput}
@@ -70,7 +71,7 @@ const Footer = () => {
 							<input
 								className="p-text"
 								type="email"
-								placeholder="Your Email"
+								placeholder={t("email")}
 								name="email"
 								value={email}
 								onChange={handleChangeInput}
@@ -79,19 +80,25 @@ const Footer = () => {
 						<div>
 							<textarea
 								className="p-text"
-								placeholder="Your Message"
+								placeholder={t("msg")}
 								value={message}
 								name="message"
 								onChange={handleChangeInput}
 							/>
 						</div>
-						<button type="button" className="p-text" onClick={handleSubmit}>
-							{!loading ? "Send Message" : "Sending..."}
-						</button>
+						{!loading ? (
+							<button type="button" className="p-text" onClick={handleSubmit}>
+								{t("sendMsg")}
+							</button>
+						) : (
+							<button type="button" className="p-text" onClick={handleSubmit}>
+								{t("sending")}
+							</button>
+						)}
 					</div>
 				) : (
 					<div>
-						<h3 className="head-text">Thank you for getting in touch!</h3>
+						<h3 className="head-text">{t("chatThx")}</h3>
 					</div>
 				)}
 			</div>

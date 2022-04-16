@@ -5,9 +5,11 @@ import { AppWrap, MotionWrap } from "../../wrapper";
 import "./About.scss";
 import { urlFor, client } from "../../client";
 import i18n from "../../assets/i18n/i18n";
+import { useTranslation } from "react-i18next";
 
 const About = () => {
 	const [abouts, setAbouts] = useState([]);
+	const { t } = useTranslation();
 	useEffect(() => {
 		const query = '*[_type == "abouts"]';
 
@@ -21,9 +23,9 @@ const About = () => {
 			<div className="container">
 				{i18n.language === "en" ? (
 					<h2 className="head-text">
-						You <span>Dream</span> It.
+						{t("you")} <span>{t("dream")}</span>
 						<br />
-						We <span>Build</span> It.
+						{t("we")} <span>{t("build")}</span>
 					</h2>
 				) : (
 					<h2 className="head-text">
@@ -44,10 +46,12 @@ const About = () => {
 						>
 							<img src={urlFor(about.imgUrl)} alt={about.title} />
 							<h2 className="bold-text" style={{ marginTop: 20 }}>
-								{about.title}
+								{i18n.language === "fr" ? about.frtitle : about.title}
 							</h2>
 							<p className="p-text" style={{ marginTop: 10 }}>
-								{about.description}
+								{i18n.language === "fr"
+									? about.frDescription
+									: about.description}
 							</p>
 						</motion.div>
 					))}

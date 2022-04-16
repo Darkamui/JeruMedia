@@ -2,17 +2,18 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../../wrapper";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
-
+import i18n from "../../assets/i18n/i18n";
 import { urlFor, client } from "../../client";
 import "./Work.scss";
+import { useTranslation } from "react-i18next";
 
 const Work = () => {
 	const [works, setWorks] = useState([]);
 	const [filterWork, setFilterWork] = useState([]);
-	const [activeFilter, setActiveFilter] = useState("All");
+	const [activeFilter, setActiveFilter] = useState("Tous");
 	const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
 	const [currentIndex, setCurrentIndex] = useState(0);
-
+	const { t } = useTranslation();
 	const handleClick = (index) => {
 		setCurrentIndex(index);
 	};
@@ -24,7 +25,6 @@ const Work = () => {
 			setFilterWork(data);
 		});
 	}, []);
-
 	const handleWorkFilter = (item) => {
 		setActiveFilter(item);
 		setCurrentIndex(0);
@@ -33,7 +33,7 @@ const Work = () => {
 		setTimeout(() => {
 			setAnimateCard([{ y: 0, opacity: 1 }]);
 
-			if (item === "All") {
+			if (item === "All" || item === "Tous") {
 				setFilterWork(works);
 			} else {
 				setFilterWork(works.filter((work) => work.tags.includes(item)));
@@ -44,10 +44,10 @@ const Work = () => {
 	return (
 		<>
 			<h2 className="head-text">
-				Our <span>Portfolio</span>
+				{t("our")} <span>{t("projects")}</span>
 			</h2>
 			<div className="app__work-filter">
-				{["FullStack", "Frontend", "Mobile", "All"].map((item, index) => (
+				{["FullStack", "Frontend", "Mobile", t("all")].map((item, index) => (
 					<div
 						key={index}
 						onClick={() => handleWorkFilter(item)}
@@ -70,7 +70,11 @@ const Work = () => {
 						<div className="hrWork"></div>
 						<div className="middleWork">
 							<h4 className="h4Work">{filterWork[currentIndex].title}</h4>
-							<p className="pWork">{filterWork[currentIndex].description}</p>
+							<p className="pWork">
+								{i18n.language === "fr"
+									? filterWork[currentIndex].frDescription
+									: filterWork[currentIndex].description}
+							</p>
 							<div className="workActionBtns">
 								<div className="leftActionBtns">
 									{filterWork[currentIndex].projectLink && (
@@ -80,7 +84,7 @@ const Work = () => {
 											rel="noreferrer"
 											className="actionBtnProject"
 										>
-											view project
+											{t("viewProject")}
 											<i className="fa-solid fa-arrow-up-right-from-square"></i>
 										</a>
 									)}

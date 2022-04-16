@@ -15,6 +15,11 @@ export default {
 			type: "string",
 		},
 		{
+			name: "frDescription",
+			title: "French Description",
+			type: "string",
+		},
+		{
 			name: "projectLink",
 			title: "Project Link",
 			type: "string",

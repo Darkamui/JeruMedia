@@ -5,6 +5,24 @@
 		"mobileDevTitle": "développeurs mobile",
 		"seoTitle": "optimisation pour moteurs de recherche",
 		"pixelTitle": "designs au pixel près",
-		"aboutTitle": "Votre <1/>Rêve.<1/>\nNotre<1/>Création.<1/>"
+		"aboutTitle": "Votre <1/>Rêve.<1/>\nNotre<1/>Création.<1/>",
+		"chatThx": "Merci pour le message, nous vous reviendrons sous peu!",
+		"chatSpan": "Contactez",
+		"chatText": "Nous",
+		"email": "Votre Courriel",
+		"name": "Votre Nom",
+		"msg": "Votre Message",
+		"our": "Nos",
+		"projects": "Projets",
+		"viewProject": "voir site",
+		"you": "Votre",
+		"we": "Notre",
+		"build": "Création.",
+		"dream": "Rêve.",
+		"sendMsg": "Envoyer",
+		"sending": "En cours d'envoi",
+		"skills": "Compétences &",
+		"exp": "Connaissances",
+		"all": "Tous"
 	}
 }

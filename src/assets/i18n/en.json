@@ -5,6 +5,25 @@
 		"mobileDevTitle": "mobile developers",
 		"seoTitle": "search engine optimisation",
 		"pixelTitle": "pixel perfect designs",
-		"aboutTitle": "You <1/>Dream <1/>It.\nWe <1/>Build <1/> It."
+		"aboutTitle": "You <1/>Dream <1/>It.\nWe <1/>Build <1/> It.",
+		"chatThx": "Thank you for getting in touch!",
+		"chatSpan": "Chat",
+		"chatText": "with us",
+		"email": "Your E-mail",
+		"name": "Your Name",
+		"msg": "Your Message",
+		"our": "Our",
+		"projects": "Portfolio",
+		"viewProject": "view project",
+		"you": "You",
+		"we": "We",
+		"build": "Build It.",
+		"dream": "Dream It.",
+
+		"sendMsg": "Send Message",
+		"sending": "Sending...",
+		"skills": "Skills &",
+		"exp": "Experiences",
+		"all": "All"
 	}
 }
