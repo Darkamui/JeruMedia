@@ -104,7 +104,9 @@ const Work = () => {
 								</div>
 							</div>
 						</div>
-						<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
+						<div className="workyimg">
+							<img src={urlFor(filterWork[currentIndex].imgUrl)} alt="" />
+						</div>
 					</motion.div>
 					{
 						<>
