@@ -18,7 +18,7 @@ const Work = () => {
 		setCurrentIndex(index);
 	};
 	useEffect(() => {
-		const query = '*[_type == "works"]';
+		const query = '*[_type == "works"] | order(title asc)';
 
 		client.fetch(query).then((data) => {
 			setWorks(data);

@@ -79,7 +79,7 @@ const Navbar = () => {
 									</li>
 								)
 						  )
-						: ["home", "services", "projets", "compétences", "contact"].map(
+						: ["accueil", "services", "projets", "compétences", "contact"].map(
 								(item) => (
 									<li className="app__flex p-text" key={`link-${item}`}>
 										<div />
@@ -89,6 +89,8 @@ const Navbar = () => {
 													? `/#projects`
 													: item === "compétences"
 													? `/#skills`
+													: item === "accueil"
+													? `/#home`
 													: `/#${item}`
 											}
 										>

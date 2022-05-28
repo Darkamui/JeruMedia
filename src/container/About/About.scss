@@ -30,3 +30,8 @@
 .container {
 	max-width: 100rem;
 }
+@media screen and (max-width: 550px) {
+	.app__profile-item {
+		width: 100%;
+	}
+}
